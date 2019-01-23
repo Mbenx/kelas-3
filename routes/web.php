@@ -32,4 +32,6 @@ Route::get('/department', 'DepartmentController@index');
 
 Route::get('/position', 'PositionController@index');
 
+Route::get('/employee', 'EmployeeController@index');
+
 

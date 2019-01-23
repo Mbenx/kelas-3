@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//use Illuminate\Support\Facades\DB;
+use DB;
 
-class PositionController extends Controller
+class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,9 @@ class PositionController extends Controller
      */
     public function index()
     {
-        return view('position/home');
+        $users = DB::table('karyawan')->get();
+        //dd($users);
+        return view('employee/home',['data'=>$users]);
     }
 
     /**

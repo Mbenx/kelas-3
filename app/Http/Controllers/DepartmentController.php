@@ -13,7 +13,9 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        $judul = "Data Department";
+        $cars=array("Volvo","BMW","Toyota");
+        return view('department/home',['data'=>$judul,'car'=>$cars]);
     }
 
     /**
