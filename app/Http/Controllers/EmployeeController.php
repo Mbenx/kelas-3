@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\DB;
 use DB;
@@ -27,7 +29,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        return view('employee/create');
     }
 
     /**
@@ -38,7 +40,16 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+
+        // query builder
+        DB::table('karyawan')->insert(
+            ['nama' => $request->name,
+             'alamat' => $request->alamat,
+             'phone' => $request->phone,
+             'jabatan' => $request->jabatan]
+        );
+        return redirect('/employee');
     }
 
     /**
@@ -60,7 +71,9 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users = DB::table('karyawan')->where('id','=',$id)->first();
+        //dd($users);
+        return view('employee/edit',['data'=>$users]);
     }
 
     /**

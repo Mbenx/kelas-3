@@ -17,7 +17,7 @@
 <section class="content">
     <div class="row">
         <div class="col-md-4">
-            <a href="/organization/create">
+            <a href="/employee/create">
                 <button class="btn btn-block btn-info">Tambah Data</button>
             </a>
         </div>
@@ -44,7 +44,10 @@
                             <td>{{$d->alamat}}</td>
                             <td>{{$d->phone}}</td>
                             <td>{{$d->jabatan}}</td>
-                            <td>EDIT | DELETE</td>
+                            <td>
+                            <a href="/employee/edit/{{$d->id}}">EDIT </a> 
+                                | DELETE
+                            </td>
                         </tr>    
                         @endforeach                        
                     </table>
