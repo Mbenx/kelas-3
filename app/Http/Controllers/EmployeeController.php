@@ -83,9 +83,17 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $req)
     {
-        //
+        //dd($req);
+
+        DB::table('karyawan')
+            ->where('id','=',$req->id)
+            ->update(['nama' => $req->name,
+            'alamat' => $req->alamat,
+            'phone' => $req->phone,
+            'jabatan' => $req->jabatan]);
+        return redirect('/employee');
     }
 
     /**
@@ -96,6 +104,8 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('karyawan')->where('id', '=', $id)
+        ->delete();
+        return redirect('/employee');
     }
 }

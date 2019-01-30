@@ -7,8 +7,8 @@
         <small>Department</small>
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Department</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Department</a></li>
+        <li class="active">Show</li>
     </ol>
 </section>
 @endsection
@@ -16,25 +16,20 @@
 @section('content')
 <section class="content">
     <div class="row">
-        <div class="col-md-4">
-            <a href="/organization/create">
-                <button class="btn btn-block btn-info">Tambah Data</button>
-            </a>
-        </div>
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Department</h3>
+                <h3 class="box-title">Department {{$data->name}}</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body no-padding">
                     <table class="table table-striped">
                         <tr>
                             <th style="width: 10px">No</th>
-                            <th>Nama Department</th>
+                            <th>Nama Position</th>
                             <th>Action</th>
                         </tr>
-                        @foreach ($data as $d)                            
+                        {{-- @foreach ($data as $d)                            
                         <tr>
                             <td> </td>
                             <td>
@@ -42,7 +37,7 @@
                             </td>
                             <td>EDIT | DELETE</td>
                         </tr>    
-                        @endforeach                        
+                        @endforeach                         --}}
                     </table>
                 </div>
                 <!-- /.box-body -->

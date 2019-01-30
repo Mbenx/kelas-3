@@ -46,7 +46,8 @@
                             <td>{{$d->jabatan}}</td>
                             <td>
                             <a href="/employee/edit/{{$d->id}}">EDIT </a> 
-                                | DELETE
+                                | 
+                            <a href="/employee/destroy/{{$d->id}}">DELETE</a>
                             </td>
                         </tr>    
                         @endforeach                        

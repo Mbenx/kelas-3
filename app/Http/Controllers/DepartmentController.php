@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Department;
 
 class DepartmentController extends Controller
 {
@@ -13,9 +14,9 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $judul = "Data Department";
-        $cars=array("Volvo","BMW","Toyota");
-        return view('department/home',['data'=>$judul,'car'=>$cars]);
+        $data = Department::all();
+        //dd($data);
+        return view('department/home',['data'=>$data]);
     }
 
     /**
@@ -47,7 +48,9 @@ class DepartmentController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Department::where('id','=',$id)->first();
+        //dd($data);
+        return view('department/show',['data'=>$data]);
     }
 
     /**
