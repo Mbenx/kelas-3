@@ -34,16 +34,16 @@
                             <th>Nama</th>
                             <th>Alamat</th>
                             <th>Phone</th>
-                            <th>Jabatan</th>
+                            <th>email</th>
                             <th>Action</th>
                         </tr>
                         @foreach ($data as $d)
                         <tr>
                             <td> #</td>
-                        <td>{{$d->nama}}</td>
+                        <td>{{$d->name}}</td>
                             <td>{{$d->alamat}}</td>
                             <td>{{$d->phone}}</td>
-                            <td>{{$d->jabatan}}</td>
+                            <td>{{$d->email}}</td>
                             <td>
                             <a href="/employee/edit/{{$d->id}}">EDIT </a> 
                                 | 

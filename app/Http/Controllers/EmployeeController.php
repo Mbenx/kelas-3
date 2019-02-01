@@ -6,7 +6,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\DB;
-use DB;
+//use DB;
+use App\Employee;
 
 class EmployeeController extends Controller
 {
@@ -17,8 +18,10 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $users = DB::table('karyawan')->get();
+        //$users = DB::table('karyawan')->get();
         //dd($users);
+        
+        $users = Employee::all();
         return view('employee/home',['data'=>$users]);
     }
 

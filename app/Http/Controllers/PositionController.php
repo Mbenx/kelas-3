@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Position;
+use App\Department;
 
 class PositionController extends Controller
 {
@@ -13,7 +15,9 @@ class PositionController extends Controller
      */
     public function index()
     {
-        return view('position/home');
+        $data = Position::all();
+        //dd($data->department);
+        return view('position/home',['data'=>$data]);
     }
 
     /**
@@ -23,7 +27,8 @@ class PositionController extends Controller
      */
     public function create()
     {
-        //
+        $department = Department::all();
+        return view('position/create',['data'=>$department]);
     }
 
     /**
@@ -34,7 +39,13 @@ class PositionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // eloquent
+        Position::create([
+        'name' => $request->name,
+        'department_id' => $request->department_id,
+        ]);
+
+        return redirect('/position');
     }
 
     /**
@@ -45,7 +56,9 @@ class PositionController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Position::where('id','=',$id)->first();
+        //dd($data);
+        return view('position/show',['data'=>$data]);
     }
 
     /**

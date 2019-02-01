@@ -32,8 +32,11 @@ Route::get('/department', 'DepartmentController@index');
 Route::get('/department/show/{id}', 'DepartmentController@show');
 
 Route::get('/position', 'PositionController@index');
+Route::get('/position/show/{id}', 'PositionController@show');
+Route::get('/position/create', 'PositionController@create');
+Route::post('/position/store', 'PositionController@store');
 
-// Route::get('/employee', 'EmployeeController@index');
+Route::get('/employee', 'EmployeeController@index');
 // Route::get('/employee/create', 'EmployeeController@create');
 // Route::post('/employee/store', 'EmployeeController@store');
 

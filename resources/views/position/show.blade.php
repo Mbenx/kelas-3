@@ -4,11 +4,11 @@
 <section class="content-header">
     <h1>
         Dashboard
-        <small>Department</small>
+        <small>Position</small>
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Department</a></li>
-        <li class="active">Show</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
     </ol>
 </section>
 @endsection
@@ -19,23 +19,23 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                <h3 class="box-title">Department {{$data->name}}</h3>
+                    <h3 class="box-title">Position {{$data->name}}</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body no-padding">
                     <table class="table table-striped">
                         <tr>
                             <th style="width: 10px">No</th>
-                            <th>Nama Position</th>
+                            <th>Nama Karyawan</th>
+                            <th>Action</th>
                         </tr>
-                        <?php $i=1;?>
-                        @foreach ($data->position as $a)                            
+                        @foreach ($data->employee as $d)
                         <tr>
-                        <td>{{$i}}</td>
-                        <td>{{$a->name}}</td>
+                            <td></td>
+                            <td>{{$d->name}}</td>
+                            <td>EDIT | DELETE</td>
                         </tr>
-                        <?php $i++;?>    
-                        @endforeach                        
+                        @endforeach
                     </table>
                 </div>
                 <!-- /.box-body -->
@@ -43,7 +43,4 @@
         </div>
     </div>
 </section>
-
-
-
 @endsection
