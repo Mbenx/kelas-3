@@ -1,0 +1,12 @@
+Presentasikan project yg akan kalian buat
+
+- ceritakan dan gambarkan alur bisnisnya
+- Di bangun menggunakan Laravel
+- set migration & seeder database nya
+- gunakan Eloquent & Query builder
+- gunakan login
+- gunakan template boostrap
+- didalam aplikasi ada relasi one to one
+- didalam aplikasi ada relasi one to many
+- didalam aplikasi ada relasi many to many
+- nilai plus jika mempresentasikan menggunakan DFD (data flow diagram)

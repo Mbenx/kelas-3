@@ -43,7 +43,10 @@
                             <a href="position/show/{{$d->id}}">{{$d->name}}
                             </td>
                             <td>{{$d->department->name}}</td>
-                            <td>EDIT | DELETE</td>
+                            <td>
+                                <a href="position/edit/{{$d->id}}"> EDIT </a> |
+                                <a href="position/destroy/{{$d->id}}"> DELETE </a>
+                            </td>
                         </tr>
                         <?php $i++;?>    
                         @endforeach                        

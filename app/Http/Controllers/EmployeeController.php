@@ -89,7 +89,7 @@ class EmployeeController extends Controller
     public function update(Request $req)
     {
         //dd($req);
-
+        // query builder
         DB::table('karyawan')
             ->where('id','=',$req->id)
             ->update(['nama' => $req->name,

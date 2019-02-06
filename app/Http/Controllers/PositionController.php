@@ -16,7 +16,10 @@ class PositionController extends Controller
     public function index()
     {
         $data = Position::all();
-        //dd($data->department);
+        
+        //show softdelete 
+        //$data = Position::withTrashed()->get();
+        //$data = Position::onlyTrashed()->get();
         return view('position/home',['data'=>$data]);
     }
 
@@ -69,7 +72,10 @@ class PositionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Position::where('id','=',$id)->first();
+        $department = Department::all();
+        //dd($data);
+        return view('position/edit',['data'=>$data,'dept'=>$department]);
     }
 
     /**
@@ -79,9 +85,15 @@ class PositionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        Position::where('id','=',$request->id)
+        ->update([
+            'name' => $request->name,
+            'department_id' => $request->department_id
+        ]);
+
+        return redirect('/position');
     }
 
     /**
@@ -92,6 +104,20 @@ class PositionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Position::find($id);
+        
+        // use softdeletes
+        //$data->delete();
+        
+        // Permanent Delete
+        $data->forceDelete();
+
+        return redirect('/position');
+    }
+
+    public function restore($id){
+        // how to restore
+        $data = Position::find($id);
+        $data->restore();
     }
 }
