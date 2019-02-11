@@ -38,6 +38,18 @@
             <i class="fa fa-person"></i> 
             <span>Employee</span>
           </a>
+        </li>
+        <li>
+          <a href="/inventory">
+            <i class="fa fa-book"></i> 
+            <span>Inventory</span>
+          </a>
+        </li>
+        <li>
+          <a href="/archive">
+            <i class="fa fa-book"></i> 
+            <span>Archive</span>
+          </a>
         </li>        
       </ul>
     </section>

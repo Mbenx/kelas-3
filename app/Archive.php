@@ -5,12 +5,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Employee extends Model
+class Archive extends Model
 {
-    protected $table = 'employees';
-    
     // whitelist
-    protected $fillable = ['name','alamat','phone','email']; 
+    protected $fillable = ['name','detail','inventory_id']; 
     
     // blacklist
     protected $guarded = ['id'];
@@ -21,12 +19,7 @@ class Employee extends Model
     // created_at & updated_at tidak terpakai 
     //public $timestamps = false;
     
-    public function position() {
-        return $this->belongsTo('App\Position');
-    }
-
-    public function inventory()
-    {
-        return $this->belongsToMany('App\Inventpry');
+    public function inventory() {
+        return $this->belongsTo('App\Inventory');
     }
 }

@@ -50,4 +50,8 @@ Route::get('/employee', 'EmployeeController@index');
 
 // Route::get('/employee/destroy/{id}', 'EmployeeController@destroy');
 
+Route::get('/inventory', 'InventoryController@index');
+Route::get('/inventory/show/{id}', 'InventoryController@show');
 
+Route::get('/archive', 'ArchiveController@index');
+Route::get('/archive/show/{id}', 'ArchiveController@show');

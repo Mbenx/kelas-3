@@ -17,4 +17,12 @@ Employee
 - 02 | 01 | Herlambang
 
 Many To Many
+Employee <==> Inventory
+
+1 inventory bisa di pakai banyak employee
+1 employee bisa memakai banyak inventory
+
+employee_inventory
+employee_id
+inventory_id
 
