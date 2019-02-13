@@ -44,8 +44,23 @@
                             <input type="text" name="phone" class="form-control" placeholder="Phone">
                         </div>
                         <div class="form-group">
-                            <label>Jabatan</label>
-                            <input type="text" name="jabatan" class="form-control" placeholder="Jabatan">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="email@mail.com">
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label>Position</label>
+                                <select class="form-control" name="position_id">
+                                    @foreach ($data as $d)
+                                    <option value="{{$d->id}}">{{$d->name}}</option>
+                                    @endforeach
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Upload Foto</label>
+                            <input type="file" name="picture">
                         </div>
                     </div>
                     <!-- /.box-body -->

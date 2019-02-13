@@ -27,6 +27,7 @@
 
 
 Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/department', 'DepartmentController@index');
 Route::get('/department/show/{id}', 'DepartmentController@show');
@@ -42,16 +43,20 @@ Route::put('/position/update', 'PositionController@update');
 Route::get('/position/destroy/{id}', 'PositionController@destroy');
 
 Route::get('/employee', 'EmployeeController@index');
-// Route::get('/employee/create', 'EmployeeController@create');
-// Route::post('/employee/store', 'EmployeeController@store');
+Route::get('/employee/create', 'EmployeeController@create');
+Route::post('/employee/store', 'EmployeeController@store');
 
-// Route::get('/employee/edit/{id}', 'EmployeeController@edit');
-// Route::put('/employee/update', 'EmployeeController@update');
+Route::get('/employee/edit/{id}', 'EmployeeController@edit');
+Route::put('/employee/update', 'EmployeeController@update');
 
-// Route::get('/employee/destroy/{id}', 'EmployeeController@destroy');
+Route::get('/employee/destroy/{id}', 'EmployeeController@destroy');
 
 Route::get('/inventory', 'InventoryController@index');
 Route::get('/inventory/show/{id}', 'InventoryController@show');
 
-Route::get('/archive', 'ArchiveController@index');
-Route::get('/archive/show/{id}', 'ArchiveController@show');
+Route::get('/archive', 'ArchiveController@index')->middleware('auth');
+Route::get('/archive/show/{id}', 'ArchiveController@show')->middleware('auth');
+
+Auth::routes();
+
+

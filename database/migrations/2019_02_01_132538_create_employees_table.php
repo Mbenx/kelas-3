@@ -20,6 +20,7 @@ class CreateEmployeesTable extends Migration
             $table->string('phone');
             $table->string('email');
             $table->integer('position_id')->unsigned();
+            $table->string('picture');
             $table->timestamps();
             $table->softDeletes();
         });

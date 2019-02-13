@@ -8,7 +8,7 @@
           <img src="/img/admin.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Administrator</p>
+          <p>{{ Auth::user()->name }}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -16,41 +16,62 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-          <a href="/">
-            <i class="fa fa-dashboard"></i> 
-            <span>Dashboard</span>
-          </a>
-        </li> 
+            <a href="/">
+              <i class="fa fa-dashboard"></i> 
+              <span>Dashboard</span>
+            </a>
+          </li>
+        @if (Auth::user()->role == 'Admin')
+          <li>
+            <a href="/department">
+              <i class="fa fa-file"></i> 
+              <span>Department</span>
+            </a>
+          </li>
+          <li>
+            <a href="/position">
+              <i class="fa fa-book"></i> 
+              <span>Position</span>
+            </a>
+          </li>
+          <li>
+            <a href="/employee">
+              <i class="fa fa-person"></i> 
+              <span>Employee</span>
+            </a>
+          </li>
+          <li>
+            <a href="/inventory">
+              <i class="fa fa-book"></i> 
+              <span>Inventory</span>
+            </a>
+          </li>
+          <li>
+            <a href="/archive">
+              <i class="fa fa-book"></i> 
+              <span>Archive</span>
+            </a>
+          </li>
+        @else
         <li>
-          <a href="/department">
-            <i class="fa fa-file"></i> 
-            <span>Department</span>
-          </a>
-        </li>
-        <li>
-          <a href="/position">
-            <i class="fa fa-book"></i> 
-            <span>Position</span>
-          </a>
-        </li>
-        <li>
-          <a href="/employee">
-            <i class="fa fa-person"></i> 
-            <span>Employee</span>
-          </a>
-        </li>
-        <li>
-          <a href="/inventory">
-            <i class="fa fa-book"></i> 
-            <span>Inventory</span>
-          </a>
-        </li>
-        <li>
-          <a href="/archive">
-            <i class="fa fa-book"></i> 
-            <span>Archive</span>
-          </a>
-        </li>        
+            <a href="/employee">
+              <i class="fa fa-person"></i> 
+              <span>Employee</span>
+            </a>
+          </li>
+          <li>
+            <a href="/inventory">
+              <i class="fa fa-book"></i> 
+              <span>Inventory</span>
+            </a>
+          </li>
+          <li>
+            <a href="/archive">
+              <i class="fa fa-book"></i> 
+              <span>Archive</span>
+            </a>
+          </li>
+        @endif        
       </ul>
     </section>
     <!-- /.sidebar -->
