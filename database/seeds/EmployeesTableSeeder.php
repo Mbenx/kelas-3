@@ -20,7 +20,7 @@ class EmployeesTableSeeder extends Seeder
             'alamat'   => $faker->address,
             'phone'             => $faker->randomDigit,
             'email'            => $faker->safeEmail,
-            //'picture'           => 'null',
+            'picture'           => 'null',
             'position_id'       => $position,
             ]);        
         }

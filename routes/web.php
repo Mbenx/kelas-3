@@ -45,7 +45,7 @@ Route::get('/position/destroy/{id}', 'PositionController@destroy');
 Route::get('/employee', 'EmployeeController@index');
 Route::get('/employee/create', 'EmployeeController@create');
 Route::post('/employee/store', 'EmployeeController@store');
-
+Route::get('/employee/show/{id}', 'EmployeeController@show');
 Route::get('/employee/edit/{id}', 'EmployeeController@edit');
 Route::put('/employee/update', 'EmployeeController@update');
 

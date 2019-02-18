@@ -25,7 +25,7 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form role="form" action="/employee/store" method="POST">
+                <form role="form" action="/employee/store" method="POST" enctype="multipart/form-data">
                     <div class="box-body">
                         <div class="form-group">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
@@ -34,10 +34,26 @@
                         <div class="form-group">
                             <label>Nama</label>
                             <input type="text" name="name" class="form-control" placeholder="Nama">
+                            {{-- validasinya disini --}}
+                            @if($errors->has('name'))
+                            <div class="alert alert-danger">
+                                <ul>
+                                    <li>{{ $errors->first('name') }}</li>
+                                </ul>
+                            </div>
+                            @endif
                         </div>
                         <div class="form-group">
                             <label>Alamat</label>
                             <input type="text" name="alamat" class="form-control" placeholder="Alamat">
+                            {{-- validasinya disini --}}
+                            @if($errors->has('alamat'))
+                            <div class="alert alert-danger">
+                                <ul>
+                                    <li>{{ $errors->first('alamat') }}</li>
+                                </ul>
+                            </div>
+                            @endif
                         </div>
                         <div class="form-group">
                             <label>Phone</label>

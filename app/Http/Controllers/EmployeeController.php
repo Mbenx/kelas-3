@@ -60,20 +60,30 @@ class EmployeeController extends Controller
         //      'phone' => $request->phone,
         //      'jabatan' => $request->jabatan]
         // );
+
+        // validation
+        $validatedData = $req->validate([
+            'name' => 'required|min:5|max:20',
+            'alamat' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'picture' => 'required',
+        ]);
+
+        // penamaan file
         $filename = $req->id.time().'.png';
+        
+        // store ke server
         $req->file('picture')->storeAs('public/employee',$filename);
                 
         Employee::create([
             'name' => $req->name,
-            'alamat' => $req->name,
+            'alamat' => $req->alamat,
             'phone' => $req->phone,
             'email' => $req->email,
-            'position_id' => $req->website,
+            'position_id' => $req->position_id,
             'picture' => $filename,
-        ]);        
-    
-        return redirect('/organization');
-
+        ]);
 
         return redirect('/employee');
     }
@@ -86,7 +96,8 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Employee::where('id','=',$id)->first();
+        return view('employee/show',['data'=>$data]);
     }
 
     /**

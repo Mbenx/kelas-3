@@ -10,7 +10,7 @@ class Employee extends Model
     protected $table = 'employees';
     
     // whitelist
-    protected $fillable = ['name','alamat','phone','email']; 
+    protected $fillable = ['name','alamat','phone','email','position_id','picture']; 
     
     // blacklist
     protected $guarded = ['id'];

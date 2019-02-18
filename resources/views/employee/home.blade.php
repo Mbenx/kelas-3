@@ -40,7 +40,9 @@
                         @foreach ($data as $d)
                         <tr>
                             <td> #</td>
-                        <td>{{$d->name}}</td>
+                            <td><a href="/employee/show/{{$d->id}}">
+                                {{$d->name}} </a>
+                            </td>
                             <td>{{$d->alamat}}</td>
                             <td>{{$d->phone}}</td>
                             <td>{{$d->email}}</td>
